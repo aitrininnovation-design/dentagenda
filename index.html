@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DentAgenda — Agenda intelligente per studi dentistici</title>
+  <meta name="description" content="Agenda con strumenti IA per studi dentistici: appuntamenti, pazienti, promemoria, portale pazienti e assistente virtuale.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button class="burger" onclick="document.body.classList.toggle('nav-open')" aria-label="Menu">☰</button>
+    <div class="brand"><span class="logo">🦷</span><span>Dent<b>Agenda</b></span><span class="demo-tag">DEMO</span></div>
+    <div class="mode-switch" role="tablist">
+      <button id="mode-studio" onclick="App.go('dashboard')">🏥 Area Studio</button>
+      <button id="mode-paziente" onclick="App.go('p-home')">🙂 Portale Pazienti</button>
+    </div>
+    <div class="ai-pill" id="ai-pill" onclick="App.go('impostazioni')" title="Configura l'IA"></div>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" id="nav"></nav>
+    <main id="view"></main>
+  </div>
+  <div id="modal" onclick="if(event.target===this)closeModal()"></div>
+  <div id="toast"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/ai.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/app2.js"></script>
+  <script src="js/portal.js"></script>
+  <script>App.init();</script>
+</body>
+</html>
